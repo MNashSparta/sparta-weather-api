@@ -8,5 +8,7 @@ class Openweather
 
 end
 
-city = Openweather.new
-p city.weather_by_city_name_service.get_city('london')
+city = Openweather.new.weather_by_city_name_service
+city.get_city('london')
+
+p city.get_city_main_temp_max
