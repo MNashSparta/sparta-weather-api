@@ -32,7 +32,7 @@ class WeatherByCityNameService
 
   # Weather Methods
   def get_city_weather
-    @city_data["weather"]
+    @city_data["weather"][0]
   end
 
   def get_city_weather_id
