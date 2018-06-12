@@ -4,8 +4,9 @@ describe Openweather do
   context 'requesting information on a specific city: ' do
 
     before(:all) do
+      @chosen_city = ('london')
       @city = Openweather.new.weather_by_city_name_service
-      @city.get_city('london')
+      @city.get_city(@chosen_city)
     end
 
     it "should respond coord as a hash" do
@@ -134,57 +135,21 @@ describe Openweather do
       expect(@city.get_city_sys_sunset).to be_kind_of(Integer)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return an integer for the city ID" do
+      expect(@city.get_city_id).to be_kind_of(Integer)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return a string for the city name that matches the " do
+      expect(@city.get_city_name).to be_kind_of(String)
+      expect(@city.get_city_name.downcase).to eq(@chosen_city.downcase)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return an Integer for city cod" do
+      expect(@city.get_city_cod).to be_kind_of(Integer)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
-    end
-
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
-    end
-
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
-    end
-
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
-    end
-
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
-    end
-
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
-    end
-
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
-    end
-
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
-    end
-
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
-    end
-
-
-
-
-
+    # it "should " do
+    #   # expect(@city.get_city_).to be_kind_of(Array)
+    # end
   end
 end
