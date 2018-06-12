@@ -22,11 +22,11 @@ class WeatherByCityNameService
   end
 
   def get_city_longitude
-    get_city_coord["longitude"]
+    get_city_coord["lon"]
   end
 
   def get_city_latitude
-    get_city_coord["latitude"]
+    get_city_coord["lat"]
   end
 
 
@@ -158,9 +158,4 @@ class WeatherByCityNameService
   def get_city_cod
     @city_data["cod"]
   end
-
-
-
-
-
 end
