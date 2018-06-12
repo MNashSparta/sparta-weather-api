@@ -35,10 +35,7 @@ class GenerateRandomCityService
     end
   end
 
-
+  def get_random_city_name
+    find_city_name(generate_random_city_id)
+  end
 end
-
-# data = GenerateRandomCityService.new
-# data.get_ids
-# p data.get_city_ids.length
-# p data.generate_random_city_id

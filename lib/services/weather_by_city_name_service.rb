@@ -8,7 +8,7 @@ class WeatherByCityNameService
   base_uri 'api.openweathermap.org'
 
   def get_city city_name
-    @city_data = JSON.parse(self.class.post("/data/2.5/weather?q=#{city_name},uk&appid=259c0014cae2125002a9796e65ad00fc").body)
+    @city_data = JSON.parse(self.class.post("/data/2.5/weather?q=#{city_name}&appid=259c0014cae2125002a9796e65ad00fc").body)
   end
 
   def get_city_data
