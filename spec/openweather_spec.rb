@@ -105,32 +105,33 @@ describe Openweather do
       expect(@city.get_city_clouds_all).to be_kind_of(Integer)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return a hash with the 6 specified keys" do
+      expect(@city.get_city_sys).to be_kind_of(Hash)
+      expect(@city.get_city_sys.keys).to eq(["type", "id", "message", "country", "sunrise", "sunset"])
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return an integer for sys: type" do
+      expect(@city.get_city_sys_type).to be_kind_of(Integer)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return an integer for sys: id" do
+      expect(@city.get_city_sys_id).to be_kind_of(Integer)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return a float for sys: message" do
+      expect(@city.get_city_sys_message).to be_kind_of(Float)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return a string for sys: country" do
+      expect(@city.get_city_sys_country).to be_kind_of(String)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return and integer for sys:sunrise" do
+      expect(@city.get_city_sys_sunrise).to be_kind_of(Integer)
     end
 
-    it "should return " do
-      # expect(@city.get_city_).to be_kind_of(Array)
+    it "should return and integer for sys:sunset" do
+      expect(@city.get_city_sys_sunset).to be_kind_of(Integer)
     end
 
     it "should return " do
