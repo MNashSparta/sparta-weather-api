@@ -1,4 +1,5 @@
 require 'json'
+require 'yaml'
 
 class GenerateRandomCityService
 
@@ -6,8 +7,24 @@ class GenerateRandomCityService
     @city_data = JSON.parse(File.read("src/city_list.json"))
   end
 
+  def get_ids
+    @city_ids = YAML.load_file('src/city_id.yml')
+  end
+
+  def get_city_ids
+    @city_ids
+  end
+
   def get_city_data
     @city_data
+  end
+
+  def generate_random_number
+    Random.rand(0..get_city_ids.length-1)
+  end
+
+  def generate_random_city_id
+    get_city_ids[generate_random_number]
   end
 
   def find_city_name id
@@ -22,5 +39,6 @@ class GenerateRandomCityService
 end
 
 # data = GenerateRandomCityService.new
-# data.get_data
-# p data.find_city_name(707860)
+# data.get_ids
+# p data.get_city_ids.length
+# p data.generate_random_city_id
