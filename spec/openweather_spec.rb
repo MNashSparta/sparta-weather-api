@@ -148,8 +148,21 @@ describe Openweather do
       expect(@city.get_city_cod).to be_kind_of(Integer)
     end
 
-    # it "should " do
-    #   # expect(@city.get_city_).to be_kind_of(Array)
-    # end
   end
+
+  context 'finding the correct city based on the id given' do
+    before(:all) do
+      @chosen_city_id = 707860
+      @chosen_city_name = "Hurzuf"
+      @generator = Openweather.new.generate_random_city_service
+      @generator.get_data
+    end
+
+    it "should return a String of value: " do
+      expect(@generator.find_city_name(@chosen_city_id)).to be_kind_of(String)
+      expect(@generator.find_city_name(@chosen_city_id)).to eq(@chosen_city_name)
+    end
+  end
+
+
 end
